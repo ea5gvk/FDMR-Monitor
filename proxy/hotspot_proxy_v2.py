@@ -349,6 +349,7 @@ if __name__ == '__main__':
         db_username = 'root'
         db_password = ''
         db_name = 'test'
+        db_port = 3306
 
 #*******************        
     
@@ -390,7 +391,7 @@ if __name__ == '__main__':
 
     # Create an instance of the db_proxy to make the clients table and them
     # pass it to the proxy instance
-    db_proxy = ProxyDB(db_server, db_username, db_password, db_name)
+    db_proxy = ProxyDB(db_server, db_username, db_password, db_name, db_port)
     db_proxy.test_db(reactor)
 
     srv_proxy = Proxy(Master, ListenPort, CONNTRACK, PEERTRACK, BlackList, IPBlackList, Timeout,
